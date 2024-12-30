@@ -4,14 +4,14 @@ spring:
   rabbitmq1:
     host: 127.0.0.1
     port: 5672
-    username: user1
-    password: pass1
+    username: guest
+    password: guest
     virtual-host: /
   rabbitmq2:
     host: 127.0.0.1
-    port: 5673
-    username: user2
-    password: pass2
+    port: 5672
+    username: guest
+    password: guest
     virtual-host: /
 
 # springdoc-openapi项目配置

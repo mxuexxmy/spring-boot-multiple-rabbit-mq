@@ -39,10 +39,13 @@ public class RabbitListenerConfig {
         return new RabbitAdmin(cf1);
     }
 
+
+
     @Bean
     public RabbitAdmin rabbitAdmin2(@Qualifier("connectionFactory2")
                                     org.springframework.amqp.rabbit.connection.ConnectionFactory cf2) {
         return new RabbitAdmin(cf2);
     }
+
 
 }

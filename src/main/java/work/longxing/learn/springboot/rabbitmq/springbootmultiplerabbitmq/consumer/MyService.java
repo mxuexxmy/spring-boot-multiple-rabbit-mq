@@ -16,11 +16,14 @@ public class MyService {
         this.rabbitTemplate2 = rabbitTemplate2;
     }
 
+    /**
+     *
+     */
     public void sendMessageToRabbit1(String msg) {
-        rabbitTemplate1.convertAndSend("exchangeA", "routingKeyA", msg);
+        rabbitTemplate1.convertAndSend("", "queueA", msg);
     }
 
     public void sendMessageToRabbit2(String msg) {
-        rabbitTemplate2.convertAndSend("exchangeB", "routingKeyB", msg);
+        rabbitTemplate2.convertAndSend("", "queueB", msg);
     }
 }

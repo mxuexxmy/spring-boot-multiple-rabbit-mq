@@ -5,6 +5,7 @@ import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 @Configuration
 public class RabbitConnectionFactoryConfig {
@@ -39,6 +40,7 @@ public class RabbitConnectionFactoryConfig {
     @Value("${spring.rabbitmq2.virtual-host:/}")
     private String rabbit2VirtualHost;
 
+    @Primary // 让该连接工厂成为默认
     @Bean("connectionFactory1")
     public ConnectionFactory connectionFactory1() {
         CachingConnectionFactory cachingConnectionFactory = new CachingConnectionFactory();
